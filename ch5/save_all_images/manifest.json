@@ -4,14 +4,15 @@
     "version": "1.0",
     "description": "Save all images in current tab",
     "background": {
-        "scripts": ["background.js"],
-        "persistent": false
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": true
     },
     "permissions": [
         "activeTab",
         "contextMenus",
-        "downloads",
-        "*://www.ixiqi.com/*"
+        "downloads"
+        
     ]
-    
 }
