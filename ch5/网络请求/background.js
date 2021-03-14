@@ -42,3 +42,29 @@ chrome.webRequest.onBeforeRequest.addListener(
     },
     ['blocking']
 )
+
+//发生错误 
+// 文档 https://www.cnblogs.com/h2zZhou/p/9238251.html
+chrome.webRequest.onErrorOccurred.addListener(
+    function(error){
+        console.log('onErrorOccurred:',error);
+        /**
+         * {
+            "error": "net::ERR_CONNECTION_RESET",
+            "frameId": 0,
+            "fromCache": false,
+            "method": "GET",
+            "parentFrameId": -1,
+            "requestId": "878",
+            "tabId": 422,
+            "timeStamp": 1615733251129.7551,
+            "type": "main_frame",
+            "url": "http://google.com/"
+        }
+         * 
+         */
+    },
+    {
+        urls: ['<all_urls>']
+    }
+)
