@@ -24,7 +24,7 @@ function _showDataOnPage(title,data){
       	chrome.notifications.create('', opt, function(id){
             setTimeout(function(){
         	chrome.notifications.clear(id, function(){});
-       	    }, 3000);
+       	    }, 5000);
       	});
     
     }else{
