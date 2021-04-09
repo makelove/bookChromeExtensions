@@ -10,3 +10,12 @@
     - 阻断所有向bad.example.com的链接 http://bad.example.com/
     -  重定向 http://www.google.com.hk
     - 删除User-Agent信息 http://httpbin.org/get
+
+- 制作 【网络加速插件】
+    - requestId
+        - chrome.webRequest.onBeforeRequest.addListener
+            - 先记录请求的requestId
+        - chrome.webRequest.onErrorOccurred.addListener
+            - 发生错误，检测requestId
+        - chrome.webRequest.onCompleted.addListener
+            - 记录时间戳 timeStamp，减去 onBeforeRequest的timeStamp ，得到 请求的使用时间
